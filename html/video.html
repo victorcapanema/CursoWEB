@@ -1,0 +1,56 @@
+<h1>Video</h1>
+
+<video id="meuVideo" width="800" height="450" controls controlsList="nodownload">
+    <source src="http://files.cod3r.com.br/curso-web/video.mp4" type="video/mp4">
+        Seu browser não suporta a tag de vídeos.
+</video>
+
+<div wm-progresso="meuVideo" class="progresso">
+    <div id="progress"></div>
+</div>
+
+<div>
+    <button wm-play="meuVideo" onclick="playVideo('meuVideo')">Play</button>
+    <button wm-pause="meuVideo" onclick="pauseVideo('meuVideo')">Pause</button>
+</div>
+
+<style>
+    .progresso{
+        height: 20px;
+        widows: 500px;
+        border: solid 1px #444;
+        margin: 20px;
+    }
+
+    .progresso > div{
+        background-color: red;
+        color: #fff;
+        height: 100%;
+        text-align: right;
+        font-size: 14px;
+        width: 0%;
+    }
+
+</style>
+
+<!-- Feito por mim -->
+<script>
+    function playVideo(id){
+        const video = document.getElementById(`${id}`);
+        video.oncontextmenu = () => false
+        video.play();
+    }
+
+    function pauseVideo(id){
+        const video = document.getElementById(`${id}`);
+        video.pause();
+    }
+
+    setInterval(()=>{
+        const myVid = document.getElementById('meuVideo');
+        let percentual = 100 * (myVid.currentTime/myVid.duration);
+        const progresso = document.getElementById('progress');
+        progresso.style.width = `${percentual}%`
+        progresso.innerHTML = `${percentual.toFixed(1)}%` 
+    },250)
+</script>

@@ -1,0 +1,19 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "Mary Any Flower",
+      "email": "many@gmail.com"
+    },
+    {
+      "name": "Vikitão",
+      "email": "viki@gmail.com",
+      "id": 3
+    },
+    {
+      "name": "Mana Akana",
+      "email": "mank@gmail.com",
+      "id": 4
+    }
+  ]
+}
